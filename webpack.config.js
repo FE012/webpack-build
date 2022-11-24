@@ -4,10 +4,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js', // 빌드 시작 위치
+  entry: './src/index.js', // 웹팩이 파일을 읽는 시작점
+  devServer : {  
+    static: './docs'  
+  },
   output: {
     // 빌드결과 저장 위치
-    filename: 'app.bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'docs'),
     clean: true,
   },
